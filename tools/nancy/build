@@ -1,0 +1,9 @@
+# BUILD
+# Use this file to build any code. 
+# Binaries should be copied to $SEC_BIN
+# Configuration or additional artifcats should be copied to $SEC_ETC
+
+ export VERSION=$(curl --silent "https://api.github.com/repos/sonatype-nexus-community/nancy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+ wget https://github.com/sonatype-nexus-community/nancy/releases/download/v${VERSION}/nancy-linux.amd64-v${VERSION}.tar.gz
+tar zxvf nancy-linux.amd64-v${VERSION}.tar.gz -C /tmp
+cp /tmp/nancy $SEC_BIN

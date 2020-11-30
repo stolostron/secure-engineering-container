@@ -1,0 +1,2 @@
+alias nancy='docker run -i quay.io/open-cluster-management/sec:latest nancy'
+alias nancyocm='go mod tidy; go mod vendor; grep -e "#" vendor/modules.txt | cut -d " " -f 2,3 | docker run -i quay.io/open-cluster-management/sec:latest nancy sleuth'
