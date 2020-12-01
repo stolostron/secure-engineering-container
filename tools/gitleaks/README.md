@@ -83,7 +83,7 @@ To add a pre-commit-hook you should add the following to (repo)/.git/hooks/pre-c
 # This is an example of what adding gitleaks to a pre-commit hook would look like.
 
 gitleaksEnabled=$(git config --bool hooks.gitleaks)
-cmd="docker run quay.io/open-cluster-management/sec:latest gitleaks --verbose --redact --pretty"
+cmd="docker run -v $PWD:/SEC:ro,Z quay.io/open-cluster-management/sec:latest gitleaks --verbose --redact --pretty"
 if [ "$gitleaksEnabled" = "true" ]; then
     $cmd
     if [ $? -eq 1 ]; then
