@@ -77,7 +77,7 @@ Help Options:
 Use this pre-commit hook (based on [this](https://github.com/zricethezav/gitleaks/wiki/Scanning#uncommitted-changes-scan) from Gitleaks) to help prevent
 sensitive information from getting committed. 
 
-To add a pre-commit-hook you should add the following to <repo>/.git/hooks/pre-commit:
+To add a pre-commit-hook you should add the following to (repo)/.git/hooks/pre-commit:
 ```bash
 #!/bin/sh
 # This is an example of what adding gitleaks to a pre-commit hook would look like.
