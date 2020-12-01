@@ -12,6 +12,14 @@ or if using the [local configuration](../../README.md#local-configuration), simp
 gosec [OPTIONS]
 ```
 
+#### Example
+From the base directory of your project, enter
+```
+gosec ./...
+```
+
+
+#### Full Options
 
 ```bash
 gosec - Golang security checker
@@ -110,4 +118,5 @@ RULES:
         G505: Import blocklist: crypto/sha1
         G601: Implicit memory aliasing in RangeStmt
 
-``
+```
+**For more information, see project [documentation](https://github.com/securego/gosec/blob/master/README.md) **
