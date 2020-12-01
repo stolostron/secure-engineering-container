@@ -102,3 +102,6 @@ Make sure to run the command
 git config hooks.gitleaks true
 ```
 to enable the hook.
+
+
+**See project [documentation](https://github.com/zricethezav/gitleaks/wiki) for more information**
