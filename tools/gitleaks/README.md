@@ -11,6 +11,15 @@ or if using the [local configuration](../../README.md#local-configuration), simp
 ```bash
 gitleaks [OPTIONS]
 ```
+#### Example
+From the base directory of your project, simply using the command 
+```
+gitleaks
+```
+is a great starting point.
+
+
+#### Full options
 ```bash
 
 Application Options:
