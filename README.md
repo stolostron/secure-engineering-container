@@ -35,16 +35,16 @@ for provided local functions to work properly.
 I want to...
     
 - **Scan code for vulnerabilities**
-    - Go: see [Gosec](tools/gosec/README)
-    - Python: see [Bandit](tools/bandit/README)
-    - NodeJS: see [njsscan](tools/njsscan/README)
+    - Go: see [Gosec](tools/gosec/README.md)
+    - Python: see [Bandit](tools/bandit/README.md)
+    - NodeJS: see [njsscan](tools/njsscan/README.md)
 - **Scan repo for sensitive information**
-    - see [Gitleaks](tools/gitleaks/README)
+    - see [Gitleaks](tools/gitleaks/README.md)
 - **Scan project for vulnerable dependencies**
-    - Go: see [nancy](tools/nancy/README)
-    - Otherwise see [trivy](tools/trivy/README)
+    - Go: see [nancy](tools/nancy/README.md)
+    - Otherwise see [trivy](tools/trivy/README.md)
 - **Scan image for vulnerabilties**
-    - See [trivy](tools/trivy/README)
+    - See [trivy](tools/trivy/README.md)
 
 
 ## Adding New Tools to SEC
