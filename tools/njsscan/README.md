@@ -18,6 +18,7 @@ From the project's base directory, enter
 njsscan .
 ```
 
+#### Full Options
 ```bash
 usage: njsscan [-h] [--json] [--sarif] [--sonarqube] [-o OUTPUT]
                [--missing-controls] [-w] [-v]
