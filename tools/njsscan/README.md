@@ -12,6 +12,12 @@ or if using the [local configuration](../../README.md#local-configuration), simp
 njsscan [OPTIONS]
 ```
 
+#### Example
+From the project's base directory, enter
+```
+njsscan .
+```
+
 ```bash
 usage: njsscan [-h] [--json] [--sarif] [--sonarqube] [-o OUTPUT]
                [--missing-controls] [-w] [-v]
@@ -31,3 +37,5 @@ optional arguments:
   -w, --exit-warning    non zero exit code on warning
   -v, --version         show njsscan version
 ```
+
+See project [documentation](https://github.com/ajinabraham/njsscan/blob/master/README.md) for more information
