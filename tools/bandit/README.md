@@ -12,6 +12,15 @@ or if using the [local configuration](../../README.md#local-configuration), simp
 bandit [OPTIONS]
 ```
 
+#### Example
+From the base directory of your project use
+```
+bandit -r .
+```
+to do a scan of the project.
+
+#### Full options
+
 ```bash
 usage: bandit [-h] [-r] [-a {file,vuln}] [-n CONTEXT_LINES] [-c CONFIG_FILE]
               [-p PROFILE] [-t TESTS] [-s SKIPS] [-l] [-i]
@@ -170,3 +179,6 @@ The following tests were discovered and loaded:
         B702    use_of_mako_templates
         B703    django_mark_safe
 ```
+
+
+**See project [documentation](https://github.com/PyCQA/bandit/blob/master/README.rst) for more information**
