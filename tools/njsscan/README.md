@@ -7,7 +7,7 @@ To scan local repository will require mounting the project's base directory with
 docker run -v $PWD:/SEC:ro,Z quay.io/open-cluster-management/sec:latest njsscan [OPTIONS]
 ```
 
-or if using the [local configuration](../../README.md), simply
+or if using the [local configuration](../../README.md#local-configuration), simply
 ```bash
 njsscan [OPTIONS]
 ```
