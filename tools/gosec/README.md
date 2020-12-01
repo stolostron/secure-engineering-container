@@ -119,4 +119,5 @@ RULES:
         G601: Implicit memory aliasing in RangeStmt
 
 ```
+
 **For more information, see project [documentation](https://github.com/securego/gosec/blob/master/README.md) **
