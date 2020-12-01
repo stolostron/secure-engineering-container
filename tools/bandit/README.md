@@ -7,7 +7,7 @@ To scan local repository will require mounting the project's base directory with
 docker run -v $PWD:/SEC:ro,Z quay.io/open-cluster-management/sec:latest bandit [OPTIONS]
 ```
 
-or if using the [local configuration](../../README.md), simply
+or if using the [local configuration](../../README.md#local-configuration), simply
 ```bash
 bandit [OPTIONS]
 ```
