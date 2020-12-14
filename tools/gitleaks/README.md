@@ -105,3 +105,11 @@ to enable the hook.
 
 
 **See project [documentation](https://github.com/zricethezav/gitleaks/wiki) for more information**
+
+
+## So leaks were detected in your project...
+__Don't Panic!__
+
+Look through the findings. Assume any credentials or other secrets found are compromised. If you are the administrator of the account that owns the credential, destroy it. If you are not, reach out to the administrator so that they may do so.
+
+_If you are certain these are false positives_, just document that. Let us know what's getting falsely identified and we can modify our configuration to minimize the same finding from showing up again.
