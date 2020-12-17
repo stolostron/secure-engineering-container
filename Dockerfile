@@ -1,6 +1,8 @@
 FROM golang:1.14 as builder
 ENV SEC_BIN /SEC/bin
+ENV SEC_ETC /SEC/etc
 RUN mkdir -p $SEC_BIN
+RUN mkdir -p $SEC_ETC
 RUN mkdir -p /SECscripts
 COPY ./tools tools
 
@@ -12,6 +14,7 @@ RUN echo "microdnf clean all" >> instALL.sh
 FROM ubi8-minimal:latest
 COPY --from=builder /SECscripts /tmp
 COPY --from=builder /SEC/bin /usr/local/bin
+COPY --from=builder /SEC/etc /usr/local/etc
 COPY scripts/local.sh /usr/local/bin/local
 
 RUN bash /tmp/instALL.sh

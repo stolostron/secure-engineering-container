@@ -2,3 +2,4 @@
 
 GO111MODULE=on go get github.com/zricethezav/gitleaks/v6
 cp $(which gitleaks) $SEC_BIN
+cp gitleaks/config.toml $SEC_ETC
