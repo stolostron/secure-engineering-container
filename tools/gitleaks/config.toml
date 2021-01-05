@@ -138,6 +138,13 @@
 	description = "Quay token"
 	regex = '''(?i)quay.*[ |\"|=|:][0-9a-zA-Z]{40}'''
 	tags = ["Quay"]
+	[rules.allowlist]
+		regexes = [
+			'''quay.io/openshift-release-dev/ocp-release@sha256''',
+			'''quay.io/quay/container-security-operator@sha256''',
+			'''quay/quay-container-security-rhel8-operator@sha256''',
+			'''quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256'''
+		]
 
 [[rules]]
 	description = "Certificate"
@@ -157,7 +164,7 @@
 	tags = ["email"]
 	[rules.allowlist]
 		regexes = [
-			'''(hello|acm-contact)@redhat\.com''',
+			'''(hello|acm-contact|quay-devel)@redhat\.com''',
 			'''(?i)(git|x-oauth-basic|GITHUB_TOKEN)@github\.com''',
 			'''signer(2)?@enterprise\.com''',
 			'''sample_signer@signer.com''',
@@ -165,7 +172,8 @@
 			'''hello@cloudposse.com''',
 			'''kubernetes@nginx.com''',
 			'''open-cluster-management@googlegroups.com''',
-			'''xxxx@xxxx.com'''
+			'''xxxx@xxxx.com''',
+			'''someone@example.com'''
 			]
 
 [[rules]]
@@ -173,15 +181,16 @@
 	regex = '''(?i)(apikey|secret|key|api|password|pass|pw|host)=[0-9a-zA-Z-_.{}]{4,120}'''
 	[rules.allowlist]
 		regexes = [
-			'''(?i)KEY=({CF_API_KEY|type|\{child.id\}|http:|true|false|LooseVersion|error|\"(cancel|confirm|command)\"}|\{(Math.Random\(\)|cluster.metadata.name)\})''',
+			'''(?i)KEY=({CF_API_KEY|type|\{((.*\.(id|to|toString\(\)|text|description|provider))|key|error|variant|version|value|container)\}|http:|true|false|value|LooseVersion|error|\"(cancel|confirm|command|menu)\"}|\{(Math.Random\(\)|cluster.metadata.name)\})''',
 			'''sonar\.projectKey''',
-			'''TEST_SECRET=keyring(-|_)secret'''
+			'''TEST_SECRET=keyring(-|_)secret''',
+			'''(?i)host=http'''
 		]
 
 [[rules]]
 	description = "Generic Credential"
-	regex = '''(?i)(dbpasswd|dbuser|dbname|dbhost|api_key|apikey|secret|key|api|password|user|guid|hostname|pw|auth)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
-	tags = ["key", "API", "generic"]
+	regex = '''(?i)(dbpasswd|dbuser|dbname|dbhost|secret|password|user|guid|hostname|pw|auth)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
+	tags = ["generic", "secret"]
 	# ignore leaks with specific identifiers like slack and aws
 	[rules.allowlist]
 		description = "ignore slack, mailchimp, aws, common kubeapi versions, sonarcloud"
@@ -189,11 +198,9 @@
 		    '''xox[baprs]-([0-9a-zA-Z]{10,48})''',
 		    '''(?i)(.{0,20})?['"][0-9a-f]{32}-us[0-9]{1,2}['"]''',
 		    '''(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}''',
-			'''(?i)Api(Version|groups|v1.EventTypeNormal|\.Context\{|\.Cluster\{|.AuthInfo)''',
-			'''PROJECT_KEY=\"open-cluster-management_''',
 			'''(?i)secret.Data\[\"''',
 			'''(?i)(secret)?(key)?ref''',
-			'''(?i)(pull(_)?|CoreV1\(\).|check)Secret(s)?''',
+			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?''',
 			'''(?i)(resource|selector|ownerLabel|clusterIDLabel|namereq\.|label|event\.)Key''',
 			'''BOOTSTRAP_KS_HOST_API''',
 			'''PIPELINE_MANIFEST_COMPONENT_KEY''',
@@ -202,18 +209,27 @@
 			'''Secret:( *)\"(test|secretName|secret|testns)\"''',
 			'''secret:( *)newKubeConfigSecret\(\"ns1\", \"secret1\"''',
 			'''auth(z)?-type: \"(id-token|access-token|rbac)\"''',
-			'''(?i)key( )?(=|:)( )?\"(acm-access-token-cookie|fieldKey|confirm|component|cancel|alert|table|Enter|\${serviceKey})\"''',
-			'''apiv1.EventTypeNormal''',
 			'''pkg/api(s)?/''',
 			'''test-auth''',
 			'''newSecret\(\"''',
 			'''userDir = \"/root\"''',
-			'''(?i)Key(Unchanged|\.String| \$image_key)'''
+			'''userNamespace'''
 		]
+
+[[rules]]
+	description = "Generic API Key"
+	regex = '''(?i)(api_key|apikey|key)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
+	tags = ["key", "API", "generic"]
+	[[rules.Entropies]]
+		Min = "4.5"
+        Max = "4.7"
+        Group = "2"
 
 [allowlist]
 	description = "Allowlisted files"
 	files = ['''^\.?gitleaks.toml$''',
 	'''(.*?)(jpg|gif|doc|pdf|bin)$''',
-	'''(go.mod|go.sum)$''']
+	'''(go.mod|go.sum)$''',
+	'''reposcan.md'''
+	]
 	paths = ['''node(-|_)modules''', '''vendor''', '''vbh''']
