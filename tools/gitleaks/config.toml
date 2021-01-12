@@ -165,7 +165,7 @@
 	[rules.allowlist]
 		regexes = [
 			'''(hello|acm-contact|quay-devel)@redhat\.com''',
-			'''(?i)(git|x-oauth-basic|GITHUB_TOKEN)@github\.com''',
+			'''(?i)(git|x-oauth-basic|GITHUB_TOKEN)@github(\.ibm)?\.com''',
 			'''signer(2)?@enterprise\.com''',
 			'''sample_signer@signer.com''',
 			'''apiteam@swagger.io''',
@@ -173,19 +173,35 @@
 			'''kubernetes@nginx.com''',
 			'''open-cluster-management@googlegroups.com''',
 			'''xxxx@xxxx.com''',
-			'''someone@example.com'''
+			'''someone@example.com''',
+			'''acm-cicd@redhat.com'''
 			]
+		files = [
+			'''snapshot_diff.md'''
+		]
 
 [[rules]]
 	description = "Env Var"
-	regex = '''(?i)(apikey|secret|key|api|password|pass|pw|host)=[0-9a-zA-Z-_.{}]{4,120}'''
+	regex = '''(?i)(secret|password|pass|pw|host)=[0-9a-zA-Z-_.{}]{4,120}'''
 	[rules.allowlist]
 		regexes = [
-			'''(?i)KEY=({CF_API_KEY|type|\{((.*\.(id|to|toString\(\)|text|description|provider))|key|error|variant|version|value|container)\}|http:|true|false|value|LooseVersion|error|\"(cancel|confirm|command|menu)\"}|\{(Math.Random\(\)|cluster.metadata.name)\})''',
-			'''sonar\.projectKey''',
 			'''TEST_SECRET=keyring(-|_)secret''',
-			'''(?i)host=http'''
+			'''(?i)host=http''',
+			'''api=\{api\}''',
+			'''(?i)Secret=my-pull-secret'''
 		]
+
+[[rules]]
+	description = "API Key in Env Var"
+	regex = '''(?i)(apikey|key|api)=([0-9a-zA-Z-_.{}]{4,120})'''
+	[rules.allowlist]
+		regexes = [
+			'''sonar\.projectKey'''
+		]
+	[[rules.Entropies]]
+		Min = "4.5"
+        Max = "4.7"
+        Group = "2"
 
 [[rules]]
 	description = "Generic Credential"
@@ -213,7 +229,8 @@
 			'''test-auth''',
 			'''newSecret\(\"''',
 			'''userDir = \"/root\"''',
-			'''userNamespace'''
+			'''userNamespace''',
+			'''clusterrolebindings.rbac.authorization.k8s.io'''
 		]
 
 [[rules]]
