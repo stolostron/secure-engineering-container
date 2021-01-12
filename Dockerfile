@@ -11,7 +11,7 @@ RUN for dir in $(ls); do bash $dir/build; cat $dir/install >> /SECscripts/instAL
 RUN echo "microdnf clean all" >> instALL.sh
 # RUN sed '/#.*$/d' /SECscripts/locALL.sh | tee /SECscripts/locALL.sh
 
-FROM ubi8-minimal:latest
+FROM registry.access.redhat.com/ubi8-minimal:latest
 COPY --from=builder /SECscripts /tmp
 COPY --from=builder /SEC/bin /usr/local/bin
 COPY --from=builder /SEC/etc /usr/local/etc
