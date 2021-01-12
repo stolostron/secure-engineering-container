@@ -10,7 +10,7 @@ docker pull quay.io/open-cluster-management/sec:latest
 ### Building Locally
 If desired, the image can be built locally by cloning this repository and running
 ```bash
-docker build -t quay.io/open-cluster-management/sec:latest
+docker build -t quay.io/open-cluster-management/sec:latest .
 ```
 Docker or podman will be required on your local system.
 
