@@ -45,6 +45,8 @@ I want to...
     - Otherwise see [trivy](tools/trivy/README.md)
 - **Scan image for vulnerabilties**
     - See [trivy](tools/trivy/README.md)
+- **Scan RBAC for usage of risky roles**
+    - See [kubiscan](tools/kubiscan/README.md)
 
 
 ## Adding New Tools to SEC
