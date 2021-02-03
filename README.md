@@ -45,6 +45,8 @@ I want to...
     - Otherwise see [trivy](tools/trivy/README.md)
 - **Scan image for vulnerabilties**
     - See [trivy](tools/trivy/README.md)
+- **Scan deployments for security risks**
+    - See [kubesec](tools/kubesec/README.md)
 
 
 ## Adding New Tools to SEC
