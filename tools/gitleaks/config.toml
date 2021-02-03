@@ -140,10 +140,7 @@
 	tags = ["Quay"]
 	[rules.allowlist]
 		regexes = [
-			'''quay.io/openshift-release-dev/ocp-release@sha256''',
-			'''quay.io/quay/container-security-operator@sha256''',
-			'''quay/quay-container-security-rhel8-operator@sha256''',
-			'''quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256'''
+			'''quay.io/.*?@sha256'''
 		]
 
 [[rules]]
@@ -230,7 +227,8 @@
 			'''newSecret\(\"''',
 			'''userDir = \"/root\"''',
 			'''userNamespace''',
-			'''clusterrolebindings.rbac.authorization.k8s.io'''
+			'''clusterrolebindings.rbac.authorization.k8s.io''',
+			'''SecretResourceAttributes'''
 		]
 
 [[rules]]
