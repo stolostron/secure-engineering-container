@@ -45,7 +45,9 @@ I want to...
     - Otherwise see [trivy](tools/trivy/README.md)
 - **Scan image for vulnerabilties**
     - See [trivy](tools/trivy/README.md)
-- **Scan RBAC for usage of risky roles**
+- **Scan Kubernetes deployments for security risks**
+    - See [kubesec](tools/kubesec/README.md)
+- **Scan Kubernetes RBAC for usage of risky roles**
     - See [kubiscan](tools/kubiscan/README.md)
 
 

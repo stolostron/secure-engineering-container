@@ -1,0 +1,4 @@
+#!/bin/bash
+
+GO111MODULE=on go get github.com/controlplaneio/kubesec/v2
+cp $(which kubesec) $SEC_BIN

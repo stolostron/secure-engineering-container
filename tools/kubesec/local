@@ -1,0 +1,1 @@
+alias kubesec='docker run -i -v $PWD:/SEC:ro,Z quay.io/open-cluster-management/sec:latest kubesec scan -'
