@@ -171,7 +171,9 @@
 			'''open-cluster-management@googlegroups.com''',
 			'''xxxx@xxxx.com''',
 			'''someone@example.com''',
-			'''acm-cicd@redhat.com'''
+			'''acm-cicd@redhat.com''',
+			'''john@example.com''',
+			'''noreply@github.com'''
 			]
 		files = [
 			'''snapshot_diff.md'''
@@ -228,7 +230,8 @@
 			'''userDir = \"/root\"''',
 			'''userNamespace''',
 			'''clusterrolebindings.rbac.authorization.k8s.io''',
-			'''SecretResourceAttributes'''
+			'''SecretResourceAttributes''',
+			'''useRecoilState'''
 		]
 
 [[rules]]
