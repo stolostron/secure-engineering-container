@@ -1,4 +1,4 @@
-FROM golang:1.14 as builder
+FROM golang:1.16 as builder
 ENV SEC_BIN /SEC/bin
 ENV SEC_ETC /SEC/etc
 RUN mkdir -p $SEC_BIN
