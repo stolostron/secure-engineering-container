@@ -1,0 +1,5 @@
+# BUILD
+# Use this file to build any code. 
+# Binaries should be copied to $SEC_BIN
+# Configuration or additional artifcats should be copied to $SEC_ETC
+

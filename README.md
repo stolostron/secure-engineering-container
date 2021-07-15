@@ -49,6 +49,8 @@ I want to...
     - See [kubesec](tools/kubesec/README.md)
 - **Scan Kubernetes RBAC for usage of risky roles**
     - See [kubiscan](tools/kubiscan/README.md)
+- **Network exploration tool and security / port scanner**
+    - See [nmap](tools/nmap/README.md)
 
 
 ## Adding New Tools to SEC

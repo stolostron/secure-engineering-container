@@ -1,0 +1,9 @@
+# INSTALL
+# These actions are performed inside the base image.
+# If the tool was compiled in the build phase, no actions may be necessary here
+
+# Install any required packages. The package manager in use is microdnf
+# ex) microdnf install python3
+microdnf install nmap
+
+# Install application 
