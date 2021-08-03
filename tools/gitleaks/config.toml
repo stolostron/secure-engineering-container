@@ -228,6 +228,7 @@
 			'''test-auth''',
 			'''newSecret\(\"''',
 			'''userDir = \"/root\"''',
+			'''user_inputs''',
 			'''userNamespace''',
 			'''clusterrolebindings.rbac.authorization.k8s.io''',
 			'''SecretResourceAttributes''',
@@ -240,8 +241,8 @@
 	tags = ["key", "API", "generic"]
 	[[rules.Entropies]]
 		Min = "4.5"
-        Max = "4.7"
-        Group = "2"
+        	Max = "4.7"
+        	Group = "2"
 
 [allowlist]
 	description = "Allowlisted files"
