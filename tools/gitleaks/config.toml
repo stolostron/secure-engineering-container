@@ -162,7 +162,7 @@
 	[rules.allowlist]
 		regexes = [
 			'''(hello|acm-contact|quay-devel)@redhat\.com''',
-			'''(?i)(git|x-oauth-basic|GITHUB_TOKEN)@github(\.ibm)?\.com''',
+			'''(?i)(git|x-oauth-basic|GITHUB_TOKEN|GIT_AUTH_TOKEN)@github(\.ibm)?\.com''',
 			'''signer(2)?@enterprise\.com''',
 			'''sample_signer@signer.com''',
 			'''apiteam@swagger.io''',
