@@ -204,7 +204,7 @@
 
 [[rules]]
 	description = "Generic Credential"
-	regex = '''(?i)(dbpasswd|dbuser|dbname|dbhost|secret|password|user|guid|hostname|pw|auth)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
+	regex = '''(?i)(dbpasswd|dbuser|dbname|dbhost|password|user|guid|hostname|pw|auth)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
 	tags = ["generic", "secret"]
 	# ignore leaks with specific identifiers like slack and aws
 	[rules.allowlist]
@@ -213,25 +213,18 @@
 		    '''xox[baprs]-([0-9a-zA-Z]{10,48})''',
 		    '''(?i)(.{0,20})?['"][0-9a-f]{32}-us[0-9]{1,2}['"]''',
 		    '''(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}''',
-			'''(?i)secret.Data\[\"''',
-			'''(?i)(secret)?(key)?ref''',
-			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?''',
 			'''(?i)(resource|selector|ownerLabel|clusterIDLabel|namereq\.|label|event\.)Key''',
 			'''BOOTSTRAP_KS_HOST_API''',
 			'''PIPELINE_MANIFEST_COMPONENT_KEY''',
 			'''(?i)Hub(-)?Config(-)?Secret(-)?Name''',
 			'''NewUnauthorized''',
-			'''Secret:( *)\"(test|secretName|secret|testns)\"''',
-			'''secret:( *)newKubeConfigSecret\(\"ns1\", \"secret1\"''',
 			'''auth(z)?-type: \"(id-token|access-token|rbac)\"''',
 			'''pkg/api(s)?/''',
 			'''test-auth''',
-			'''newSecret\(\"''',
 			'''userDir = \"/root\"''',
 			'''user_inputs''',
 			'''userNamespace''',
 			'''clusterrolebindings.rbac.authorization.k8s.io''',
-			'''SecretResourceAttributes''',
 			'''useRecoilState'''
 		]
 
@@ -248,6 +241,16 @@
 	description = "Generic Secret"
 	regex = '''(?i)(secret)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
 	tags = ["generic", "secret"]
+	[rules.allowlist]
+		regex = [
+			'''(?i)secret.Data\[\"''',
+			'''(?i)(secret)?(key)?ref''',
+			'''Secret:( *)\"(test|secretName|secret|testns)\"''',
+			'''secret:( *)newKubeConfigSecret\(\"ns1\", \"secret1\"''',
+			'''newSecret\(\"''',
+			'''SecretResourceAttributes''',
+			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?'''
+		]
 
 [[rules]]
 	description = "Generic User"
