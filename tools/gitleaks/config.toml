@@ -244,6 +244,16 @@
         Max = "4.7"
         Group = "2"
 
+[[rules]]
+	description = "Generic Secret"
+	regex = '''(?i)(secret)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
+	tags = ["generic", "secret"]
+
+[[rules]]
+	description = "Generic User"
+	regex = '''(?i)(user)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
+	tags = ["generic", "user"]
+
 [allowlist]
 	description = "Allowlisted files"
 	files = ['''^\.?gitleaks.toml$''',
