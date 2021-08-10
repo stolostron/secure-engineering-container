@@ -204,7 +204,7 @@
 
 [[rules]]
 	description = "Generic Credential"
-	regex = '''(?i)(dbpasswd|dbuser|dbname|dbhost|password|user|guid|hostname|pw|auth)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
+	regex = '''(?i)(dbpasswd|dbuser|dbname|dbhost|password|guid|hostname|pw|auth)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
 	tags = ["generic", "secret"]
 	# ignore leaks with specific identifiers like slack and aws
 	[rules.allowlist]
@@ -216,14 +216,10 @@
 			'''(?i)(resource|selector|ownerLabel|clusterIDLabel|namereq\.|label|event\.)Key''',
 			'''BOOTSTRAP_KS_HOST_API''',
 			'''PIPELINE_MANIFEST_COMPONENT_KEY''',
-			'''(?i)Hub(-)?Config(-)?Secret(-)?Name''',
 			'''NewUnauthorized''',
 			'''auth(z)?-type: \"(id-token|access-token|rbac)\"''',
 			'''pkg/api(s)?/''',
 			'''test-auth''',
-			'''userDir = \"/root\"''',
-			'''user_inputs''',
-			'''userNamespace''',
 			'''clusterrolebindings.rbac.authorization.k8s.io''',
 			'''useRecoilState'''
 		]
@@ -249,13 +245,22 @@
 			'''secret:( *)newKubeConfigSecret\(\"ns1\", \"secret1\"''',
 			'''newSecret\(\"''',
 			'''SecretResourceAttributes''',
-			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?'''
+			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?''',
+			'''(?i)Hub(-)?Config(-)?Secret(-)?Name'''
 		]
 
 [[rules]]
 	description = "Generic User"
 	regex = '''(?i)(user)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
 	tags = ["generic", "user"]
+	[rules.allowlist]
+		regex = [
+			'''userDir = \"/root\"''',
+			'''user_inputs''',
+			'''userNamespace''',
+			'''user_inputs''',
+			'''userNamespace'''
+		]
 
 [allowlist]
 	description = "Allowlisted files"
