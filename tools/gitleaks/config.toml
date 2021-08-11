@@ -248,6 +248,10 @@
 			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?''',
 			'''(?i)Hub(-)?Config(-)?Secret(-)?Name'''
 		]
+	[[rules.Entropies]]
+		Min = "2.5"
+        Max = "4.7"
+        Group = "2"
 
 [[rules]]
 	description = "Generic User"
@@ -261,6 +265,10 @@
 			'''user_inputs''',
 			'''userNamespace'''
 		]
+	[[rules.Entropies]]
+		Min = "2.5"
+		Max = "4.7"
+		Group = "2"
 
 [allowlist]
 	description = "Allowlisted files"
