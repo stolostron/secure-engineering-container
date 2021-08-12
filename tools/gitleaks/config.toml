@@ -238,7 +238,7 @@
 	regex = '''(?i)(secret)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
 	tags = ["generic", "secret"]
 	[rules.allowlist]
-		regex = [
+		regexes = [
 			'''(?i)secret.Data\[\"''',
 			'''(?i)(secret)?(key)?ref''',
 			'''Secret:( *)\"(test|secretName|secret|testns)\"''',
@@ -248,27 +248,30 @@
 			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?''',
 			'''(?i)Hub(-)?Config(-)?Secret(-)?Name'''
 		]
-	[[rules.Entropies]]
-		Min = "2.5"
-        Max = "4.7"
-        Group = "2"
+#	[[rules.Entropies]]
+#		Min = "2.5"
+#        Max = "4.7"
+#        Group = "2"
 
 [[rules]]
 	description = "Generic User"
 	regex = '''(?i)(user)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
 	tags = ["generic", "user"]
 	[rules.allowlist]
-		regex = [
+		regexes = [
 			'''userDir = \"/root\"''',
 			'''user_inputs''',
 			'''userNamespace''',
 			'''user_inputs''',
-			'''userNamespace'''
+			'''userNamespace''',
+			'''USER=\$\{ADMIN_USER:-''',
+			'''usermenu''',
+			'''User page\"'''
 		]
-	[[rules.Entropies]]
-		Min = "2.5"
-		Max = "4.7"
-		Group = "2"
+#	[[rules.Entropies]]
+#		Min = "2.5"
+#		Max = "4.7"
+#		Group = "2"
 
 [allowlist]
 	description = "Allowlisted files"
