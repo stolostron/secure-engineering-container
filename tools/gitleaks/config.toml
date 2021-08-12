@@ -222,7 +222,12 @@
 			'''test-auth''',
 			'''clusterrolebindings.rbac.authorization.k8s.io''',
 			'''useRecoilState''',
-			'''authentication\", \"state\"'''
+			'''authentication\", \"state\"''',
+			'''Password   string `json:\"pas(s?)word\"''',
+			'''Password:   string\(s.Data\[\"password\"''',
+			'''password\"] = \"your_password\"''',
+			'''auth\": \"xxxxxxx\"''',
+			'''Password\",type=\"string\"'''
 		]
 
 [[rules]]
@@ -250,7 +255,10 @@
 			'''(?i)Hub(-)?Config(-)?Secret(-)?Name''',
 			'''secret is deleted''',
 			'''secret \(alert/g0\)''',
-			'''secret\', kind: \'value'''
+			'''secret\', kind: \'value''',
+			'''SecretAccessKey\"] = \"your_aws_secret_access_key\"''',
+			'''Secret\":   \"your_clientSecret\"''',
+			'''secret data under the \"ssh-privatekey\"'''
 		]
 #	[[rules.Entropies]]
 #		Min = "2.5"
@@ -272,7 +280,11 @@
 			'''usermenu''',
 			'''User page\"''',
 			'''user\\\"\", \"state\": ''',
-			'''user\", \"state\": '''
+			'''user\", \"state\": ''',
+			'''User       string `json:\"user\"''',
+			'''username\"] = \"your_username\"''',
+			'''User\", \"Group\"''',
+			'''User\",type=\"string\"'''
 		]
 #	[[rules.Entropies]]
 #		Min = "2.5"
