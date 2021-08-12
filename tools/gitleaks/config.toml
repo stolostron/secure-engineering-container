@@ -260,10 +260,6 @@
 			'''Secret\":   \"your_clientSecret\"''',
 			'''secret data under the \"ssh-privatekey\"'''
 		]
-#	[[rules.Entropies]]
-#		Min = "2.5"
-#        Max = "4.7"
-#        Group = "2"
 
 [[rules]]
 	description = "Generic User"
@@ -286,10 +282,6 @@
 			'''User\", \"Group\"''',
 			'''User\",type=\"string\"'''
 		]
-#	[[rules.Entropies]]
-#		Min = "2.5"
-#		Max = "4.7"
-#		Group = "2"
 
 [allowlist]
 	description = "Allowlisted files"
