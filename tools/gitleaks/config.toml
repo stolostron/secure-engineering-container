@@ -249,7 +249,8 @@
 			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?''',
 			'''(?i)Hub(-)?Config(-)?Secret(-)?Name''',
 			'''secret is deleted''',
-			'''secret \(alert/g0\)'''
+			'''secret \(alert/g0\)''',
+			'''secret\', kind: \'value'''
 		]
 #	[[rules.Entropies]]
 #		Min = "2.5"
