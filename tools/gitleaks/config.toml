@@ -227,7 +227,9 @@
 			'''Password:   string\(s.Data\[\"password\"''',
 			'''password\"] = \"your_password\"''',
 			'''auth\": \"xxxxxxx\"''',
-			'''Password\",type=\"string\"'''
+			'''Password\",type=\"string\"''',
+			'''PWD: \'pass-viewer''',
+			'''PASSWORD \|\| Cypress.env\(\'OPTIONS_HUB_PASSWORD'''
 		]
 
 [[rules]]
@@ -280,7 +282,8 @@
 			'''User       string `json:\"user\"''',
 			'''username\"] = \"your_username\"''',
 			'''User\", \"Group\"''',
-			'''User\",type=\"string\"'''
+			'''User\",type=\"string\"''',
+			'''USER \|\| Cypress.env\(\'OPTIONS_HUB_USER'''
 		]
 
 [allowlist]
