@@ -272,8 +272,6 @@
 			'''userDir = \"/root\"''',
 			'''user_inputs''',
 			'''userNamespace''',
-			'''user_inputs''',
-			'''userNamespace''',
 			'''USER=\$\{ADMIN_USER:-''',
 			'''usermenu''',
 			'''User page\"''',
