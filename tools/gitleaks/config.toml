@@ -269,19 +269,9 @@
 	tags = ["generic", "user"]
 	[rules.allowlist]
 		regexes = [
-			'''userDir = \"/root\"''',
-			'''user_inputs''',
-			'''userNamespace''',
-			'''USER=\$\{ADMIN_USER:-''',
-			'''usermenu''',
-			'''User page\"''',
-			'''user\\\"\", \"state\": ''',
-			'''user\", \"state\": ''',
-			'''User       string `json:\"user\"''',
-			'''username\"] = \"your_username\"''',
-			'''User\", \"Group\"''',
-			'''User\",type=\"string\"''',
-			'''USER \|\| Cypress.env\(\'OPTIONS_HUB_USER'''
+			'''(?i:user)(_inputs|Namespace|menu| page\"|(\\\")?\", \"state\": |( *)string `json:\"user\")''',
+			'''(?i:user)(Dir = \"/root\"|=\$\{ADMIN_USER:-|name\"] = \"your_username\"| \|\| Cypress.env\(\'OPTIONS_HUB_USER)''',
+			'''(?i:user)\",( \"Group\"|,type=\"string\")'''
 		]
 
 [allowlist]
