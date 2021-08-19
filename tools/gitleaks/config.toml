@@ -223,13 +223,14 @@
 			'''clusterrolebindings.rbac.authorization.k8s.io''',
 			'''useRecoilState''',
 			'''authentication\", \"state\"''',
+			'''auth(-idp)?(\"|\'): (\"xxxxxxx\"|(\"|\')ignore(\"|\'))''',
 			'''Password   string `json:\"pas(s?)word\"''',
-			'''Password:   string\(s.Data\[\"password\"''',
+			'''Password(:| =)?( *)string\(s.Data\[\"password\"''',
 			'''password\"] = \"your_password\"''',
-			'''auth\": \"xxxxxxx\"''',
 			'''Password\",type=\"string\"''',
 			'''PWD: \'pass-viewer''',
-			'''PASSWORD \|\| Cypress.env\(\'OPTIONS_HUB_PASSWORD'''
+			'''PASSWORD \|\| Cypress.env\(\'OPTIONS_HUB_PASSWORD''',
+			'''Password:( *)\"REDACTED\"'''
 		]
 
 [[rules]]
@@ -255,12 +256,8 @@
 			'''SecretResourceAttributes''',
 			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?''',
 			'''(?i)Hub(-)?Config(-)?Secret(-)?Name''',
-			'''secret is deleted''',
-			'''secret \(alert/g0\)''',
-			'''secret\', kind: \'value''',
-			'''SecretAccessKey\"] = \"your_aws_secret_access_key\"''',
-			'''Secret\":   \"your_clientSecret\"''',
-			'''secret data under the \"ssh-privatekey\"'''
+			'''(?i)secret((\'|\"):)? ((\'|\")grc-test-1(\'|\")|is deleted|\(alert/g0\)|data under the \"ssh-privatekey\")''',
+			'''(?i)secret(\', kind: \'value|AccessKey\"] = \"your_aws_secret_access_key\"|\":   \"your_clientSecret\")'''
 		]
 
 [[rules]]
@@ -269,9 +266,10 @@
 	tags = ["generic", "user"]
 	[rules.allowlist]
 		regexes = [
-			'''(?i:user)(_inputs|Namespace|menu| page\"|(\\\")?\", \"state\": |( *)string `json:\"user\")''',
-			'''(?i:user)(Dir = \"/root\"|=\$\{ADMIN_USER:-|name\"] = \"your_username\"| \|\| Cypress.env\(\'OPTIONS_HUB_USER)''',
-			'''(?i:user)\",( \"Group\"|,type=\"string\")'''
+			'''(?i)user(_inputs|Namespace|menu| page\"|(\\\")?\", \"state\": |( *)string `json:\"user\"|Info)''',
+			'''(?i)user( = string\(s.Data\[\"username\"|Dir = \"/root\"|=\$\{ADMIN_USER:-|name\"] = \"your_username\"| \|\| Cypress.env\(\'OPTIONS_HUB_USER)''',
+			'''(?i)user\",( \"Group\"|type=\"string\")''',
+			'''User:( *)\"REDACTED\"'''
 		]
 
 [allowlist]
