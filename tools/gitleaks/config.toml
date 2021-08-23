@@ -267,7 +267,7 @@
 	[rules.allowlist]
 		regexes = [
 			'''(?i)user(_inputs|Namespace|menu| page\"|(\\\")?\", \"state\": |( *)string `json:\"user\"|Info)''',
-			'''(?i)user( = string\(s.Data\[\"username\"|Dir = \"/root\"|=\$\{ADMIN_USER:-|name\"] = \"your_username\"| \|\| Cypress.env\(\'OPTIONS_HUB_USER)''',
+			'''(?i)user( = string\(s.Data\[\"username\"|Dir = \"/root\"|=\$\{ADMIN_USER:-|name\"] = \"your_username\"| \|\| Cypress.env\(\'OPTIONS_HUB_USER)| === \'kubeadmin''',
 			'''(?i)user\",( \"Group\"|type=\"string\")''',
 			'''User:( *)\"REDACTED\"'''
 		]
