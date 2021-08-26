@@ -257,7 +257,9 @@
 			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?''',
 			'''(?i)Hub(-)?Config(-)?Secret(-)?Name''',
 			'''(?i)secret((\'|\"):)? ((\'|\")grc-test-1(\'|\")|is deleted|\(alert/g0\)|data under the \"ssh-privatekey\")''',
-			'''(?i)secret(\', kind: \'value|AccessKey\"] = \"your_aws_secret_access_key\"|\":   \"your_clientSecret\")'''
+			'''(?i)secret(\', kind: \'value|\":   \"your_clientSecret\")''',
+			'''(?i)secret(Name.type|AccessKey\"]) = (\'text\'|\'hidden\'|\"your_aws_secret_access_key\")''',
+			'''Secret\' \|\| id === \'helmSecret'''
 		]
 
 [[rules]]
