@@ -163,6 +163,7 @@
 		regexes = [
 			'''(hello|acm-contact|quay-devel)@redhat\.com''',
 			'''(?i)(git|x-oauth-basic|GITHUB_TOKEN|GIT_AUTH_TOKEN)@github(\.ibm)?\.com''',
+			'''[a-zA-Z0-9._%+-]+@users\.noreply\.github\.com''',
 			'''signer(2)?@enterprise\.com''',
 			'''sample_signer@signer.com''',
 			'''apiteam@swagger.io''',
@@ -187,7 +188,8 @@
 			'''TEST_SECRET=keyring(-|_)secret''',
 			'''(?i)host=http''',
 			'''api=\{api\}''',
-			'''(?i)Secret=my-pull-secret'''
+			'''(?i)Secret=my-pull-secret''',
+			'''Secret=\{(defaultPullSecret|controlProps)\}?'''
 		]
 
 [[rules]]
@@ -205,7 +207,7 @@
 [[rules]]
 	description = "Generic Credential"
 	regex = '''(?i)(dbpasswd|dbuser|dbname|dbhost|password|guid|hostname|pw|auth)(.{0,20})?['|"]([0-9a-zA-Z-_\/+!{}/=]{4,120})['|"]'''
-	tags = ["generic", "secret"]
+	tags = ["generic", "credential"]
 	# ignore leaks with specific identifiers like slack and aws
 	[rules.allowlist]
 		description = "ignore slack, mailchimp, aws, common kubeapi versions, sonarcloud"
@@ -224,6 +226,7 @@
 			'''useRecoilState''',
 			'''authentication\", \"state\"''',
 			'''auth(-idp)?(\"|\'): (\"xxxxxxx\"|(\"|\')ignore(\"|\'))''',
+			'''AuthInfos\[\"default-auth\"\]''',
 			'''Password   string `json:\"pas(s?)word\"''',
 			'''Password(:| =)?( *)string\(s.Data\[\"password\"''',
 			'''password\"] = \"your_password\"''',
@@ -250,7 +253,7 @@
 		regexes = [
 			'''(?i)secret.Data\[\"''',
 			'''(?i)(secret)?(key)?ref''',
-			'''Secret:( *)\"(test|secretName|secret|testns)\"''',
+			'''(?i)Secret(Name)?:( *)\"(test|secretName|secret|testns|mySecret)\"''',
 			'''secret:( *)newKubeConfigSecret\(\"ns1\", \"secret1\"''',
 			'''newSecret\(\"''',
 			'''SecretResourceAttributes''',
@@ -272,7 +275,8 @@
 			'''(?i)user( = string\(s.Data\[\"username\"|Dir = \"/root\"|=\$\{ADMIN_USER:-|name\"] = \"your_username\"| \|\| Cypress.env\(\'OPTIONS_HUB_USER)| === \'kubeadmin''',
 			'''(?i)user\"(,| or)( \"Group\"|type=\"string\")''',
 			'''User:( *)\"REDACTED\"''',
-			'''users Defaults to \"claim\"'''
+			'''users Defaults to \"claim\"''',
+			'''user.name (\'|\")[0-9a-zA-Z-]+(\'|\")'''
 		]
 
 [allowlist]
