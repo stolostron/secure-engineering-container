@@ -260,7 +260,9 @@
 			'''(?i)(pull(_|-)?|CoreV1\(\).|check)Secret(s)?''',
 			'''(?i)Hub(-)?Config(-)?Secret(-)?Name''',
 			'''(?i)secret((\'|\"):)? ((\'|\")grc-test-1(\'|\")|is deleted|\(alert/g0\)|data under the \"ssh-privatekey\")''',
-			'''(?i)secret(\', kind: \'value|\":   \"your_clientSecret\")''',
+			'''(?i)secret(\', kind|\"|-type\"):( )*(\'value|\"your_clientSecret\"|\"(non-)?acm-cluster\")''',
+			'''SecretType (=|!)= (\"acm-cluster\"|\"true\")''',
+			'''secretName, \"-cluster-secret\"''',
 			'''(?i)secret(Name.type|AccessKey\"]) = (\'text\'|\'hidden\'|\"your_aws_secret_access_key\")''',
 			'''Secret\' \|\| id === \'helmSecret'''
 		]
@@ -272,7 +274,8 @@
 	[rules.allowlist]
 		regexes = [
 			'''(?i)user(_inputs|Namespace|menu| page\"|(\\\")?\", \"state\": |( *)string `json:\"user\"|Info)''',
-			'''(?i)user( = string\(s.Data\[\"username\"|Dir = \"/root\"|=\$\{ADMIN_USER:-|name\"] = \"your_username\"| \|\| Cypress.env\(\'OPTIONS_HUB_USER)| === \'kubeadmin''',
+			'''(?i)user( = string\(s.Data\[\"username\"|=\$\{ADMIN_USER:-| \|\| Cypress.env\(\'OPTIONS_HUB_USER)| === \'kubeadmin''',
+			'''(?i)user(NAME|Dir|name\"])(=| = )(\"multicloudlab\"|\"/root\"|\"your_username\")''',
 			'''(?i)user\"(,| or)( \"Group\"|type=\"string\")''',
 			'''User:( *)\"REDACTED\"''',
 			'''users Defaults to \"claim\"''',
