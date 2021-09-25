@@ -263,12 +263,14 @@
 			'''(?i)secret((\'|\"):)? ((\'|\")grc-test-1(\'|\")|is deleted|\(alert/g0\)|data under the \"ssh-privatekey\")''',
 			'''(?i)secret(\', kind|\"|-type\"):( )*(\'value|\"your_clientSecret\"|\"(non-)?acm-cluster\")''',
 			'''SecretType (=|!)= (\"acm-cluster\"|\"true\")''',
-			'''(?i)secretName(, \"-cluster-secret\"| := \"fake-server-secret\"|, Namespace: \"openshift-config\"|( *)= \"bootstrap-hub-kubeconfig\")''',
+			'''(?i)secretName( := \"fake-server-secret\"|( *)= \"bootstrap-hub-kubeconfig\")''',
+			'''(?i)secret(\.)?Name, (\"-cluster-secret\"|Namespace: \"openshift-config\"|\"namespace\")''',
 			'''(?i)secret(Name.type|AccessKey\"]|Name string) = (\'text\'|\'hidden\'|\"your_aws_secret_access_key\"|\"auto-import-secret\")''',
 			'''Secret\' \|\| id === \'helmSecret''',
 			'''secrets\", \"configmaps\", \"serviceaccounts\"''',
 			'''Secret containing a \'kubeconfig''',
-			'''secrets.Items, initSecret\(\"(a-base64-encoded-secret|remote-managed-one-(0-td8kk-admin-kubeconfig|bootstrap-sa-token-xkxdv)|the-secret-thing)\"'''
+			'''secrets.Items, initSecret\(\"(a-base64-encoded-secret|remote-managed-one-(0-td8kk-admin-kubeconfig|bootstrap-sa-token-xkxdv)|the-secret-thing)\"''',
+			'''secret\", \"name\"'''
 		]
 
 [[rules]]
