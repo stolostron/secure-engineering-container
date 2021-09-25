@@ -186,7 +186,7 @@
 	[rules.allowlist]
 		regexes = [
 			'''TEST_SECRET=keyring(-|_)secret''',
-			'''(?i)host=http''',
+			'''(?i)host=(http|127\.0\.0\.1)''',
 			'''api=\{api\}''',
 			'''(?i)Secret=my-pull-secret''',
 			'''Secret=\{(defaultPullSecret|controlProps)\}?'''
