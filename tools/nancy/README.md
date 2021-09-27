@@ -20,6 +20,11 @@ As an alternative, in order to filter out non-production dependencies, the follo
 ```
 go mod tidy; go mod vendor; grep -e "#" vendor/modules.txt | cut -d " " -f 2,3 | nancy sleuth
 ```
+The following may be used if a replace directive is not properly addressed by the previous command
+```
+go mod tidy; go mod vendor; grep -e '#' vendor/modules.txt | awk '{ print $(NF-1), $NF }' | grep -v -e '#' | nancy sleuth
+```
+
 With the local configuration in place, the simple alias below can be used from the project's base directory
 ```
 nancyocm
