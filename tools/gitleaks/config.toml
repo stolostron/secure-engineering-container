@@ -171,9 +171,8 @@
 			'''kubernetes@nginx.com''',
 			'''open-cluster-management@googlegroups.com''',
 			'''xxxx@xxxx.com''',
-			'''someone@example.com''',
+			'''[a-zA-Z0-9._%+-]+@example.com''',
 			'''acm-cicd@redhat.com''',
-			'''john@example.com''',
 			'''noreply@github.com'''
 			]
 		files = [
