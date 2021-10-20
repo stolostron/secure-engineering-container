@@ -285,7 +285,8 @@
 			'''User:( *)\"REDACTED\"''',
 			'''users Defaults to \"claim\"''',
 			'''user.name (\'|\")[0-9a-zA-Z-]+(\'|\")''',
-			'''user(\.HomeDir|ServerHost), (\"wrongcluster\"|\".kube\", \"config\")'''
+			'''user(\.HomeDir|ServerHost), (\"wrongcluster\"|\".kube\", \"config\")''',
+			'''useRecoilState'''
 		]
 
 [allowlist]
