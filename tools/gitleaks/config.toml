@@ -172,7 +172,7 @@
 			'''open-cluster-management@googlegroups.com''',
 			'''xxxx@xxxx.com''',
 			'''[a-zA-Z0-9._%+-]+@example.com''',
-			'''acm-cicd@redhat.com''',
+			'''(user|acm-cicd)@redhat.com''',
 			'''noreply@github.com'''
 			]
 		files = [
