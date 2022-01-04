@@ -4,7 +4,7 @@ Scan NodeJS code for vulnerabilities
 ## Usage
 To scan local repository will require mounting the project's base directory with 
 ```bash
-docker run -v $PWD:/SEC:ro,Z quay.io/open-cluster-management/sec:latest njsscan [OPTIONS]
+docker run -v $PWD:/SEC:ro,Z quay.io/stolostron/sec:latest njsscan [OPTIONS]
 ```
 
 or if using the [local configuration](../../README.md#local-configuration), simply

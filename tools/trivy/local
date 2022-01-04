@@ -1,3 +1,3 @@
-alias trivy='docker run -v $PWD:/SEC:ro,Z quay.io/open-cluster-management/sec:latest trivy'
-alias trivy-fs='docker run -v $PWD:/SEC:ro,Z quay.io/open-cluster-management/sec:latest trivy fs --ignore-unfixed'
-function trivy-image { imgName=$(echo $1 | sed s./..g | sed s.:..g); mkdir /tmp/trivytmp-$imgName; docker save -o /tmp/trivytmp-$imgName/tmp-trivy-$imgName.tar $1; docker run -v /tmp/trivytmp-$imgName:/SEC:ro,Z quay.io/open-cluster-management/sec:latest trivy image --input tmp-trivy-$imgName.tar --ignore-unfixed; rm -r /tmp/trivytmp-$imgName }
+alias trivy='docker run -v $PWD:/SEC:ro,Z quay.io/stolostron/sec:latest trivy'
+alias trivy-fs='docker run -v $PWD:/SEC:ro,Z quay.io/stolostron/sec:latest trivy fs --ignore-unfixed'
+function trivy-image { imgName=$(echo $1 | sed s./..g | sed s.:..g); mkdir /tmp/trivytmp-$imgName; docker save -o /tmp/trivytmp-$imgName/tmp-trivy-$imgName.tar $1; docker run -v /tmp/trivytmp-$imgName:/SEC:ro,Z quay.io/stolostron/sec:latest trivy image --input tmp-trivy-$imgName.tar --ignore-unfixed; rm -r /tmp/trivytmp-$imgName }

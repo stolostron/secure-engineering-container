@@ -1,1 +1,1 @@
-alias njsscan='docker run -v $PWD:/SEC:ro,Z quay.io/open-cluster-management/sec:latest njsscan'
+alias njsscan='docker run -v $PWD:/SEC:ro,Z quay.io/stolostron/sec:latest njsscan'

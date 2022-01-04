@@ -1,1 +1,1 @@
-alias nmap='docker run -v $PWD:/SEC:ro,Z quay.io/open-cluster-management/sec:latest nmap'
+alias nmap='docker run -v $PWD:/SEC:ro,Z quay.io/stolostron/sec:latest nmap'
