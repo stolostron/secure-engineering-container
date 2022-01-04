@@ -4,7 +4,7 @@ Scan deployments for insecure configurations
 ## Usage
 To scan local repository will require passing a deployment yaml as standard input to the docker command.
 ```bash
-cat deployment.yaml | docker run -i -v $PWD:/SEC:ro,Z quay.io/open-cluster-management/sec:latest kubesec scan -
+cat deployment.yaml | docker run -i -v $PWD:/SEC:ro,Z quay.io/stolostron/sec:latest kubesec scan -
 ```
 
 or if using the [local configuration](../../README.md#local-configuration), simply

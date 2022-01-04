@@ -4,13 +4,13 @@ Container packed with secure engineering tools and automation
 ## Installation
 It is recommended that the dynamically tagged image available on Quay is used, thus keeping tools up-to-date throughout development.
 ```bash
-docker pull quay.io/open-cluster-management/sec:latest
+docker pull quay.io/stolostron/sec:latest
 ```
 
 ### Building Locally
 If desired, the image can be built locally by cloning this repository and running
 ```bash
-docker build -t quay.io/open-cluster-management/sec:latest .
+docker build -t quay.io/stolostron/sec:latest .
 ```
 Docker or podman will be required on your local system.
 
@@ -19,7 +19,7 @@ Docker or podman will be required on your local system.
 Many of the tools provided require volume mounts or other tool-specific configurations to work properly. To make it easier to run the tools without worrying about these settings, aliases and functions have been written and are available using the `local` command. Using a redirect to save this to a file allows these to be imported into your current shell session.
 
 ```bash
-docker run quay.io/open-cluster-management/sec local > /tmp/sec-local
+docker run quay.io/stolostron/sec local > /tmp/sec-local
 source /tmp/sec-local
 ```
 

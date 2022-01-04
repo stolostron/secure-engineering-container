@@ -1,1 +1,1 @@
-alias kubiscan='docker run -it --rm -e CONF_PATH=/.kube/config -v ~/.kube:/tmp/.kube quay.io/open-cluster-management/sec:latest python3 /KubiScan/KubiScan.py'
+alias kubiscan='docker run -it --rm -e CONF_PATH=/.kube/config -v ~/.kube:/tmp/.kube quay.io/stolostron/sec:latest python3 /KubiScan/KubiScan.py'

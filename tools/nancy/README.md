@@ -3,7 +3,7 @@ Scan Go project dependencies for vulnerabilities
 
 ## Usage
 Typical usage is to pipe the output of `go list -json -m all` to nancy with  
-go list -json -m all | docker run -i quay.io/open-cluster-management/sec:latest nancy [OPTIONS]
+go list -json -m all | docker run -i quay.io/stolostron/sec:latest nancy [OPTIONS]
 
 or if using the [local configuration](../../README.md#local-configuration), simply
 ```
