@@ -185,7 +185,7 @@
 			'''xxxx@xxxx.com''',
 			'''[a-zA-Z0-9._%+-]+@example.com''',
 			'''(user|acm-cicd)@redhat.com''',
-			'''noreply@github.com''',
+			'''(token|noreply)@github.com''',
 			'''feross@feross.org'''
 		]
 		files = [
