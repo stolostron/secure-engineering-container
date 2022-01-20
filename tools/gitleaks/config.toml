@@ -293,7 +293,7 @@
 		regexes = [
 			'''(?i)user(_inputs|Namespace|menu| page\"|(\\\")?\", \"state\": |( *)string `json:\"user\"|Info)''',
 			'''(?i)user( = string\(s.Data\[\"username\"|=\$\{ADMIN_USER:-| \|\| Cypress.env\(\'OPTIONS_HUB_USER)| === \'kubeadmin''',
-			'''(?i)user(NAME|Dir|name\"]|1)( *)(=| = )(\"multicloudlab\"|\"/root\"|\"your_username\"|\"admin1\"|\"view1\")''',
+			'''(?i)user(NAME|Dir|name(\"?)]|1)( *)(, |=| = )(\"multicloudlab\"|\"/root\"|\"your_username\"|\"admin1\"|\"view1\"|Cypress.env\(\"RBAC_PASS\"|RBACpass|\"e2e-cluster-admin-cluster\")''',
 			'''(?i)user\"(,| or)( \"Group\"|type=\"string\")''',
 			'''User:( *)\"REDACTED\"''',
 			'''users Defaults to \"claim\"''',
