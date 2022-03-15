@@ -186,7 +186,8 @@
 			'''[a-zA-Z0-9._%+-]+@example.com''',
 			'''(user|acm-cicd)@redhat.com''',
 			'''(token|noreply)@github.com''',
-			'''feross@feross.org'''
+			'''feross@feross.org''',
+			'''awx@acm-install-001.hosts.qa.psi.rdu2.redhat.com'''
 		]
 		files = [
 			'''snapshot_diff.md'''
