@@ -1,6 +1,6 @@
 
 # Install any required packages. The package manager in use is microdnf
-microdnf install python3
+microdnf install python39
 pip3 install bandit
 
 microdnf clean all

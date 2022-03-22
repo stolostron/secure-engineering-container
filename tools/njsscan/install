@@ -4,7 +4,7 @@
 
 # Install any required packages. The package manager in use is microdnf
 # ex) microdnf install python3
-microdnf install python3 which
+microdnf install python39 which
 
 # Install application 
 pip3 install --upgrade njsscan
