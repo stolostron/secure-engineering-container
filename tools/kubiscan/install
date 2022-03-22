@@ -1,6 +1,6 @@
 
 # Install any required packages. The package manager in use is microdnf
-microdnf install python3 git python3-pip
+microdnf install python39 git
 
 microdnf clean all
 
@@ -10,4 +10,3 @@ pip3 install PTable
 git clone https://github.com/gparvin/KubiScan.git
 
 # run kubiscan with: python3 /tmp/KubiScan/KubiScan.py
-
