@@ -59,3 +59,5 @@ New tools can be added by creating a new directory in the tools directory and ad
 - Install - Any installation steps, including installing package dependencies, that need to happen in the base image
 - local - Any aliases or functions that make using the tool easier locally
 - test - Commands to test successful installation of the tool
+
+<!--- rebuild 2022-05-17 --->
