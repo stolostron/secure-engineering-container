@@ -184,7 +184,7 @@
 			'''open-cluster-management@googlegroups.com''',
 			'''xxxx@xxxx.com''',
 			'''[a-zA-Z0-9._%+-]+@example.com''',
-			'''(user|acm-cicd)@redhat.com''',
+			'''(user|acm-cicd|xx)@redhat.com''',
 			'''(token|noreply)@github.com''',
 			'''feross@feross.org''',
 			'''awx@acm-install-001.hosts.qa.psi.rdu2.redhat.com'''
