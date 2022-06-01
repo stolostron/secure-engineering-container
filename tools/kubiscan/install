@@ -1,11 +1,9 @@
 
 # Install any required packages. The package manager in use is microdnf
-microdnf install python39 git
+microdnf install python python-pip git
 
-microdnf clean all
-
-pip3 install kubernetes
-pip3 install PTable
+python -m pip install --upgrade kubernetes
+python -m pip install --upgrade PTable
 
 git clone https://github.com/gparvin/KubiScan.git
 
