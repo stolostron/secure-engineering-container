@@ -247,7 +247,8 @@
 			'''Password\",type=\"string\"''',
 			'''PWD: \'pass-viewer''',
 			'''PASSWORD \|\| Cypress.env\(\'OPTIONS_HUB_PASSWORD''',
-			'''Password:( *)\"REDACTED\"'''
+			'''Password:( *)\"REDACTED\"''',
+			'''['|"](my-host|other-host)[0-9]*['|"]'''
 		]
 
 [[rules]]
