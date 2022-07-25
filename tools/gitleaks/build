@@ -1,5 +1,4 @@
 #!/bin/bash
 
-GO111MODULE=on go get github.com/zricethezav/gitleaks/v6
-cp $(which gitleaks) $SEC_BIN
+GO111MODULE=on GOBIN=$SEC_BIN go install github.com/zricethezav/gitleaks/v6@latest
 cp gitleaks/config.toml $SEC_ETC

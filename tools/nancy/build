@@ -4,6 +4,6 @@
 # Configuration or additional artifcats should be copied to $SEC_ETC
 
 export VERSION=$(curl --silent "https://api.github.com/repos/sonatype-nexus-community/nancy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-wget https://github.com/sonatype-nexus-community/nancy/releases/download/v${VERSION}/nancy-v${VERSION}-linux-amd64.tar.gz
-tar zxvf nancy-v${VERSION}-linux-amd64.tar.gz -C /tmp
+wget -O /tmp/nancy-v${VERSION}-linux-amd64.tar.gz https://github.com/sonatype-nexus-community/nancy/releases/download/v${VERSION}/nancy-v${VERSION}-linux-amd64.tar.gz
+tar zxvf /tmp/nancy-v${VERSION}-linux-amd64.tar.gz -C /tmp
 cp /tmp/nancy $SEC_BIN
