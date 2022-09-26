@@ -313,3 +313,7 @@
 	'''reposcan.md'''
 	]
 	paths = ['''node(-|_)modules''', '''vendor''', '''vbh''']
+
+[allowlist]
+    description = "Ignore lines with #notgitleak"
+    regexes = ['''#notgitleak''']
