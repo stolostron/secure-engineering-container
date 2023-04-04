@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/go-toolset:1.17.7 as builder
+FROM registry.access.redhat.com/ubi9/go-toolset:1.18 as builder
 ENV SEC_BIN /tmp/SEC/bin
 ENV SEC_ETC /tmp/SEC/etc
 RUN mkdir -p $SEC_BIN
