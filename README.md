@@ -60,4 +60,4 @@ New tools can be added by creating a new directory in the tools directory and ad
 - local - Any aliases or functions that make using the tool easier locally
 - test - Commands to test successful installation of the tool
 
-<!--- rebuild 2022-11-10 --->
+<!--- rebuild 2023-04-04 --->
